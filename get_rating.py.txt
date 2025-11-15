@@ -1,0 +1,116 @@
+import chess
+import chess.pgn
+import chess.engine
+import io
+
+def analyze_game_performance(pgn_string, stockfish_path="/usr/local/bin/stockfish"):
+    """
+    Analyze a chess game and calculate performance ratings based on move quality.
+    
+    Args:
+        pgn_string: PGN string of the game
+        stockfish_path: Path to Stockfish engine executable
+    
+    Returns:
+        Dictionary with White and Black performance metrics
+    """
+    
+    # Parse the PGN
+    pgn = io.StringIO(pgn_string)
+    game = chess.pgn.read_game(pgn)
+    
+    # Get player ratings from headers
+    white_elo = int(game.headers.get("WhiteElo", 0))
+    black_elo = int(game.headers.get("BlackElo", 0))
+    
+    # Initialize Stockfish
+    engine = chess.engine.SimpleEngine.popen_uci(stockfish_path)
+    
+    # Analysis parameters
+    board = game.board()
+    white_errors = []
+    black_errors = []
+    move_count = 0
+    
+    # Analyze each position
+    for move in game.mainline_moves():
+        # Get evaluation before the move
+        info_before = engine.analyse(board, chess.engine.Limit(depth=15))
+        eval_before = info_before["score"].white().score(mate_score=10000)
+        
+        # Make the move
+        board.push(move)
+        
+        # Get evaluation after the move
+        info_after = engine.analyse(board, chess.engine.Limit(depth=15))
+        eval_after = info_after["score"].white().score(mate_score=10000)
+        
+        # Calculate centipawn loss
+        if move_count % 2 == 0:  # White's move
+            if eval_before is not None and eval_after is not None:
+                error = eval_before - eval_after
+                white_errors.append(max(0, error))
+        else:  # Black's move
+            if eval_before is not None and eval_after is not None:
+                error = eval_after - eval_before
+                black_errors.append(max(0, error))
+        
+        move_count += 1
+    
+    engine.quit()
+    
+    # Calculate average centipawn loss
+    white_avg_loss = sum(white_errors) / len(white_errors) if white_errors else 0
+    black_avg_loss = sum(black_errors) / len(black_errors) if black_errors else 0
+    
+    # Estimate performance rating (simplified model)
+    # Lower centipawn loss = better performance
+    white_performance = white_elo - (white_avg_loss / 10)
+    black_performance = black_elo - (black_avg_loss / 10)
+    
+    return {
+        "white_elo": white_elo,
+        "black_elo": black_elo,
+        "white_avg_centipawn_loss": round(white_avg_loss, 2),
+        "black_avg_centipawn_loss": round(black_avg_loss, 2),
+        "white_performance_rating": round(white_performance, 0),
+        "black_performance_rating": round(black_performance, 0),
+        "white_accuracy": round(max(0, 100 - white_avg_loss/5), 1),
+        "black_accuracy": round(max(0, 100 - black_avg_loss/5), 1)
+    }
+
+# Your PGN
+pgn_string = """[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2025.11.08"]
+[Round "?"]
+[White "logitech247"]
+[Black "jaideepbommidi"]
+[Result "0-1"]
+[TimeControl "300"]
+[WhiteElo "268"]
+[BlackElo "291"]
+[Termination "jaideepbommidi won by checkmate"]
+[ECO "B07"]
+[EndTime "4:13:17 GMT+0000"]
+[Link "https://www.chess.com/game/live/145250960416?move=35"]
+
+1. e4 e5 2. d4 d6 3. dxe5 dxe5 4. Qxd8+ Kxd8 5. Bg5+ Be7 6. Bxe7+ Kxe7 7. Nf3
+Nc6 8. Bb5 Bd7 9. O-O Re8 10. Rd1 Kd8 11. Rd5 Re7 12. Nc3 Nf6 13. Rxe5 Nxe5 14.
+Nxe5 Bxb5 15. Nxb5 Rxe5 16. Rd1+ Ke7 17. Nxc7 Rxe4 18. Nd5+ Nxd5 19. Rxd5 Re1#
+0-1"""
+
+# Note: Update stockfish_path to your Stockfish installation
+# Windows example: "C:\\Program Files\\Stockfish\\stockfish.exe"
+# Mac example: "/usr/local/bin/stockfish"
+# Linux example: "/usr/bin/stockfish"
+
+results = analyze_game_performance(pgn_string, stockfish_path="path/to/stockfish")
+
+print(f"White ({results['white_elo']}): Performance Rating = {results['white_performance_rating']}")
+print(f"  Average Centipawn Loss: {results['white_avg_centipawn_loss']}")
+print(f"  Accuracy: {results['white_accuracy']}%")
+print()
+print(f"Black ({results['black_elo']}): Performance Rating = {results['black_performance_rating']}")
+print(f"  Average Centipawn Loss: {results['black_avg_centipawn_loss']}")
+print(f"  Accuracy: {results['black_accuracy']}%")

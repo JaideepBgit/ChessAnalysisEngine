@@ -1,0 +1,128 @@
+# Example Games for Testing
+
+## Game 1: Scholar's Mate (Quick Game)
+[Event "Casual Game"]
+[Site "Online"]
+[Date "2025.11.11"]
+[White "Beginner1"]
+[Black "Beginner2"]
+[Result "1-0"]
+[WhiteElo "800"]
+[BlackElo "800"]
+
+1. e4 e5 2. Bc4 Nc6 3. Qh5 Nf6 4. Qxf7# 1-0
+
+## Game 2: Italian Game (Medium Length)
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2025.11.11"]
+[White "Player1"]
+[Black "Player2"]
+[Result "1-0"]
+[WhiteElo "1500"]
+[BlackElo "1500"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 
+7. Bd2 Bxd2+ 8. Nbxd2 d5 9. exd5 Nxd5 10. Qb3 Nce7 11. O-O O-O 
+12. Rfe1 c6 13. a4 Qd6 14. a5 Bg4 15. Ne5 Bh5 16. Qxb7 Rab8 
+17. Qxc6 Qxc6 18. Nxc6 Nxc6 19. Rxe7 Nxe7 20. Re1 Rfe8 21. Rxe7 
+Rxe7 22. Nf3 Bg6 23. Ne5 Bf5 24. g4 Be6 25. Bxe6 Rxe6 26. Nc4 
+Rxe1+ 27. Nxe1 1-0
+
+## Game 3: Sicilian Defense (Complex)
+[Event "Rated Blitz"]
+[Site "Lichess"]
+[Date "2025.11.11"]
+[White "Tactical_Player"]
+[Black "Positional_Player"]
+[Result "0-1"]
+[WhiteElo "1800"]
+[BlackElo "1850"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be3 e5 
+7. Nb3 Be6 8. f3 Be7 9. Qd2 O-O 10. O-O-O Nbd7 11. g4 b5 12. g5 
+b4 13. Ne2 Ne8 14. f4 a5 15. f5 Bc4 16. Nbd4 exd4 17. Nxd4 a4 
+18. Kb1 Qa5 19. Qxa5 Rxa5 20. Nf3 Nc5 21. Bd4 Ra8 22. Bxc5 dxc5 
+23. Rxd8 Rxd8 24. Bd3 Rd4 25. Rf1 Nc7 26. Nd2 Bd3 27. cxd3 Rxd3 
+28. Rf2 Ne6 29. h4 Nd4 30. Kc1 Rc8 31. Kb1 c4 32. Bc2 Rxd2 
+33. Rxd2 Bxg5 0-1
+
+## Game 4: Queen's Gambit (Endgame)
+[Event "Classical Game"]
+[Site "Chess.com"]
+[Date "2025.11.11"]
+[White "Endgame_Expert"]
+[Black "Learning_Player"]
+[Result "1/2-1/2"]
+[WhiteElo "2000"]
+[BlackElo "1900"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 h6 
+7. Bh4 b6 8. cxd5 Nxd5 9. Bxe7 Qxe7 10. Nxd5 exd5 11. Rc1 Be6 
+12. Qa4 c5 13. Qa3 Rc8 14. Bb5 a6 15. dxc5 bxc5 16. O-O Nd7 
+17. Ba4 Qb4 18. Qxb4 cxb4 19. Rc7 Rxc7 20. Bxd7 Bxd7 21. Rc1 
+Rxc1+ 22. Nxc1 Rc8 23. Nd3 Rc2 24. Nxb4 Rxb2 25. Nxd5 Rxa2 
+26. Nc7 a5 27. Nb5 Bxb5 28. f3 a4 29. Kf2 a3 30. Ke2 Bc4+ 
+31. Kd1 Ra1+ 32. Kc2 a2 33. Kb2 Bb3 34. g4 Rc1 35. h4 Rc2+ 
+36. Ka1 Rc1+ 37. Kb2 Rc2+ 1/2-1/2
+
+## Game 5: King's Indian Defense (Tactical)
+[Event "Rapid Tournament"]
+[Site "Chess.com"]
+[Date "2025.11.11"]
+[White "Aggressive_Player"]
+[Black "Defensive_Player"]
+[Result "1-0"]
+[WhiteElo "1700"]
+[BlackElo "1650"]
+
+1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 
+7. O-O Nc6 8. d5 Ne7 9. Ne1 Nd7 10. Nd3 f5 11. Bd2 Nf6 12. f3 
+f4 13. c5 g5 14. Rc1 Ng6 15. cxd6 cxd6 16. Nb5 Rf7 17. Nxa7 
+h5 18. Nb5 g4 19. Rc6 g3 20. h3 Bf8 21. Qc2 Bd7 22. Rc7 Bxb5 
+23. Bxb5 Qd7 24. Rxd7 Rxd7 25. Qc6 Rd8 26. Qxb7 Nh7 27. Qc6 
+Nhf6 28. Rc1 Nh4 29. Rc3 Nhg6 30. Bc1 Nh4 31. Nxf4 Nxf4 
+32. Bxf4 exf4 33. Qc7 Rd7 34. Qc8 Rad8 35. Qxd8 1-0
+
+## How to Use These Games
+
+1. Copy the entire game text (including headers)
+2. Paste into the "PGN" field in the analysis interface
+3. Enter the player name you want to analyze (e.g., "Player1", "Tactical_Player")
+4. Click "Analyze Game"
+
+## What to Look For
+
+### Game 1 (Scholar's Mate)
+- Very short game
+- Shows how quickly mistakes can end a game
+- Black's blunder on move 3
+
+### Game 2 (Italian Game)
+- Balanced opening
+- Good for learning standard positions
+- Shows typical middlegame plans
+
+### Game 3 (Sicilian Defense)
+- Complex tactical game
+- Sharp positions
+- Good for advanced analysis
+
+### Game 4 (Queen's Gambit)
+- Endgame focus
+- Precise play required
+- Draw by repetition
+
+### Game 5 (King's Indian)
+- Attacking chess
+- Pawn storms
+- Tactical complications
+
+## Tips for Analysis
+
+1. Start with shorter games (Game 1-2)
+2. Focus on your own games for best learning
+3. Compare your moves to engine suggestions
+4. Pay attention to phase-specific accuracy
+5. Review blunders carefully
+6. Note patterns in your mistakes

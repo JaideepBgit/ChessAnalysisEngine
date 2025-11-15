@@ -1,0 +1,6 @@
+flask==3.0.0
+flask-cors==4.0.0
+python-chess==1.999
+ollama==0.3.3
+SpeechRecognition
+pyttsx3
