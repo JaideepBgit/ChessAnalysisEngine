@@ -183,56 +183,64 @@ function App() {
 
       <div className="main-container">
         <div className="board-section">
-          <div className="player-info">
-            <div className="player-name">Black</div>
-          </div>
-          
-          <div className="board-wrapper">
-            <Chessboard
-              position={game.fen()}
-              onPieceDrop={onDrop}
-              onSquareClick={onSquareClick}
-              customSquareStyles={{
-                ...highlightedSquares,
-                ...(selectedSquare && {
-                  [selectedSquare]: { backgroundColor: 'rgba(255, 255, 0, 0.4)' }
-                })
-              }}
-              boardWidth={560}
-            />
+          <div className="board-container">
+            <div className="player-info">
+              <div className="player-name">Black</div>
+            </div>
+            
+            <div className="board-wrapper">
+              <Chessboard
+                position={game.fen()}
+                onPieceDrop={onDrop}
+                onSquareClick={onSquareClick}
+                customSquareStyles={{
+                  ...highlightedSquares,
+                  ...(selectedSquare && {
+                    [selectedSquare]: { backgroundColor: 'rgba(255, 255, 0, 0.4)' }
+                  })
+                }}
+                boardWidth={560}
+              />
+            </div>
+
+            <div className="player-info">
+              <div className="player-name">White</div>
+            </div>
           </div>
 
-          <div className="player-info">
-            <div className="player-name">White</div>
+          <div className="eval-bar-container">
+            <div className="eval-label">Evaluation</div>
+            <div className="eval-bar">
+              <div 
+                className="eval-bar-white" 
+                style={{ height: `${getEvaluationBar()}%` }}
+              />
+              <div className="eval-text">
+                {formatEvaluation(evaluation)}
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="analysis-panel">
           <div className="evaluation-section">
-            <h3>Analysis</h3>
-            <div className="eval-bar-container">
-              <div className="eval-bar">
-                <div 
-                  className="eval-bar-white" 
-                  style={{ height: `${getEvaluationBar()}%` }}
-                />
-                <div className="eval-text">
-                  {formatEvaluation(evaluation)}
-                </div>
-              </div>
-            </div>
+            <h3>Best Moves</h3>
             
-            {isAnalyzing && <div className="analyzing">Analyzing...</div>}
+            {isAnalyzing && <div className="analyzing">Analyzing position...</div>}
             
             <div className="best-moves">
-              <h4>Best Moves</h4>
-              {bestMoves.map((move, idx) => (
+              {bestMoves.slice(0, 3).map((move, idx) => (
                 <div key={idx} className="best-move-item">
-                  <span className="move-number">{idx + 1}.</span>
+                  <span className="move-number">{idx + 1}</span>
                   <span className="move-san">{move.san}</span>
                   <span className="move-eval">{formatEvaluation(move.score)}</span>
                 </div>
               ))}
+              {bestMoves.length === 0 && !isAnalyzing && (
+                <div style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '20px' }}>
+                  No moves available
+                </div>
+              )}
             </div>
           </div>
 

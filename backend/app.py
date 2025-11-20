@@ -7,6 +7,7 @@ import io
 import os
 import tempfile
 from collections import defaultdict
+from mathematical_analysis import analyze_position_mathematically
 
 app = Flask(__name__)
 CORS(app)
@@ -345,6 +346,22 @@ def analyze_game():
             white_material = count_material(board, chess.WHITE)
             black_material = count_material(board, chess.BLACK)
             
+            # Add mathematical analysis for important moves (target player moves with cp_loss > 25)
+            math_analysis = None
+            if is_target_move and cp_loss > 25:
+                try:
+                    math_result = analyze_position_mathematically(
+                        board_before_fen, move.uci(), best_move.uci() if best_move else None,
+                        eval_before, eval_after, cp_loss, current_phase, move_san, best_move_san
+                    )
+                    math_analysis = {
+                        'analysis': math_result['analysis'],
+                        'insights': math_result['insights'],
+                        'summary': math_result['summary']
+                    }
+                except Exception as e:
+                    print(f"Math analysis error for move {move_number}: {e}")
+            
             moves_analysis.append({
                 'moveNumber': move_number,
                 'halfMove': idx,
@@ -363,7 +380,8 @@ def analyze_game():
                 'fen': board.fen(),
                 'fenBefore': board_before_fen,
                 'whiteMaterial': white_material,
-                'blackMaterial': black_material
+                'blackMaterial': black_material,
+                'mathematicalAnalysis': math_analysis
             })
             
             if is_white_move:
@@ -475,6 +493,40 @@ def analyze_game():
                 },
                 'performanceRating': performance_rating
             }
+        })
+    
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'success': False, 'error': str(e)}), 400
+
+
+@app.route('/api/mathematical-analysis', methods=['POST'])
+def mathematical_analysis():
+    """Get deep mathematical analysis for a specific move"""
+    try:
+        data = request.json
+        fen = data.get('fen')
+        move_uci = data.get('move')
+        best_move_uci = data.get('bestMove')
+        eval_before = data.get('evalBefore')
+        eval_after = data.get('evalAfter')
+        cp_loss = data.get('cpLoss', 0)
+        phase = data.get('phase', 'middlegame')
+        move_san = data.get('moveSan', '')
+        best_move_san = data.get('bestMoveSan', '')
+        
+        # Get mathematical analysis
+        result = analyze_position_mathematically(
+            fen, move_uci, best_move_uci, eval_before, eval_after,
+            cp_loss, phase, move_san, best_move_san
+        )
+        
+        return jsonify({
+            'success': True,
+            'analysis': result['analysis'],
+            'insights': result['insights'],
+            'summary': result['summary']
         })
     
     except Exception as e:

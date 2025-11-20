@@ -5,7 +5,7 @@ import MicIcon from '@mui/icons-material/Mic';
 import StopIcon from '@mui/icons-material/Stop';
 import SendIcon from '@mui/icons-material/Send';
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';
-import SmartToyIcon from '@mui/icons-material/SmartToy';
+import SchoolIcon from '@mui/icons-material/School';
 
 const API_URL = 'http://localhost:5000';
 
@@ -179,7 +179,7 @@ function VoiceChat({ fen, move, bestMove, evaluation, cpLoss, quality, phase }) 
     <div className="voice-chat-container">
       <div className="voice-chat-header">
         <h3>
-          <SmartToyIcon style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+          <SchoolIcon style={{ marginRight: '8px', verticalAlign: 'middle' }} />
           AI Chess Coach
         </h3>
         {!aiStatus.ollama && (

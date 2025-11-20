@@ -44,40 +44,45 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  // Background Colors - Dark Base
-  '--bg-primary': '#0a0a0f',
-  '--bg-secondary': '#13131a',
-  '--bg-tertiary': '#1c1c26',
-  '--bg-hover': '#252532',
+  // Background Colors - Warm Beige/Tan Base
+  '--bg-primary': '#584439',
+  '--bg-secondary': '#6b5442',
+  '--bg-tertiary': '#82654d',
+  '--bg-hover': '#9c7a5a',
   
-  // Accent Colors - Muted Purple Theme
-  '--accent-primary': '#8b7fc8',
-  '--accent-secondary': '#6b5fb0',
-  '--accent-tertiary': '#9d8fd4',
-  '--accent-warning': '#d4a574',
-  '--accent-gradient': 'linear-gradient(135deg, #8b7fc8 0%, #6b5fb0 100%)',
+  // Accent Colors - Lighter Warm Beige/Tan Palette
+  '--accent-primary': '#e8ddd0',
+  '--accent-secondary': '#f5f1eb',
+  '--accent-tertiary': '#faf8f5',
+  '--accent-warning': '#cba688',
+  '--accent-gradient': 'linear-gradient(135deg, #e8ddd0 0%, #d9c7b3 100%)',
   
-  // Text Colors
-  '--text-primary': '#e4e4e7',
-  '--text-secondary': '#a1a1aa',
-  '--text-muted': '#71717a',
+  // Sage Accent Colors
+  '--sage-primary': '#aeb6ae',
+  '--sage-secondary': '#d2d6d2',
+  '--sage-light': '#e8eae8',
+  
+  // Text Colors - White/Light for high contrast
+  '--text-primary': '#ffffff',
+  '--text-secondary': '#f5f1eb',
+  '--text-muted': '#d9c7b3',
   
   // Border Colors
-  '--border-primary': '#27272a',
-  '--border-secondary': '#3f3f46',
-  '--border-accent': '#8b7fc8',
+  '--border-primary': '#9c7a5a',
+  '--border-secondary': '#82654d',
+  '--border-accent': '#e8ddd0',
   
   // Status Colors
-  '--success': '#6ee7b7',
-  '--warning': '#fbbf24',
-  '--error': '#f87171',
+  '--success': '#aeb6ae',
+  '--warning': '#e8ddd0',
+  '--error': '#ff6b6b',
   
   // Shadows
-  '--shadow-sm': '0 2px 8px rgba(0, 0, 0, 0.5)',
-  '--shadow-md': '0 4px 16px rgba(0, 0, 0, 0.6)',
-  '--shadow-lg': '0 8px 32px rgba(0, 0, 0, 0.7)',
-  '--shadow-accent': '0 4px 20px rgba(139, 127, 200, 0.3)',
-  '--shadow-glow': '0 0 20px rgba(139, 127, 200, 0.25)',
+  '--shadow-sm': '0 2px 8px rgba(88, 68, 57, 0.5)',
+  '--shadow-md': '0 4px 16px rgba(88, 68, 57, 0.6)',
+  '--shadow-lg': '0 8px 32px rgba(88, 68, 57, 0.7)',
+  '--shadow-accent': '0 4px 20px rgba(232, 221, 208, 0.4)',
+  '--shadow-glow': '0 0 20px rgba(232, 221, 208, 0.3)',
 };
 
 export const applyTheme = (theme) => {

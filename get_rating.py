@@ -144,88 +144,47 @@ def analyze_game_performance(pgn_string, stockfish_path="/usr/local/bin/stockfis
 # Your PGN
 pgn_string = """[Event "Live Chess"]
 [Site "Chess.com"]
-[Date "2025.11.11"]
+[Date "2025.11.15"]
 [Round "?"]
-[White "muhammed1125"]
+[White "Cesarsu1000"]
 [Black "jaideepbommidi"]
 [Result "0-1"]
 [TimeControl "300"]
-[WhiteElo "291"]
-[BlackElo "310"]
-[Termination "jaideepbommidi won by checkmate"]
-[Link "https://www.chess.com/game/145399159056"]
+[WhiteElo "299"]
+[BlackElo "318"]
+[Termination "jaideepbommidi won on time"]
+[Link "https://www.chess.com/game/145565031374"]
 
-1. e4 {[%clk 0:04:59.4][%timestamp 6]} 1... e5 {[%clk 0:04:58.6][%timestamp 14]}
-2. Qh5 {[%clk 0:04:57.6][%timestamp 18]} 2... Nc6 {[%clk 0:04:54.4][%timestamp
-42]} 3. Bc4 {[%clk 0:04:56.5][%timestamp 11]} 3... Qe7 {[%clk
-0:04:52.6][%timestamp 18]} 4. d3 {[%clk 0:04:53.8][%timestamp 27]} 4... Nf6
-{[%clk 0:04:50.8][%timestamp 18]} 5. Qf3 {[%clk 0:04:47.9][%timestamp 59]} 5...
-d6 {[%clk 0:04:46.3][%timestamp 45]} 6. Nc3 {[%clk 0:04:44.6][%timestamp 33]}
-6... g6 {[%clk 0:04:43.3][%timestamp 30]} 7. Nd1 {[%clk 0:04:42.4][%timestamp
-22]} 7... Nd4 {[%clk 0:04:38.7][%timestamp 46]} 8. Qg3 {[%clk
-0:04:20.8][%timestamp 216]} 8... Nxc2+ {[%clk 0:04:33.6][%timestamp 51]} 9. Kf1
-{[%clk 0:04:16.9][%timestamp 39]} 9... Nxa1 {[%clk 0:04:32.4][%timestamp 12]}
-10. Nc3 {[%clk 0:04:15.4][%timestamp 15]} 10... Nc2 {[%clk 0:04:26.8][%timestamp
-56]} 11. Nd5 {[%clk 0:04:13.7][%timestamp 17]} 11... Nxd5 {[%clk
-0:04:19.3][%timestamp 75]} 12. Bxd5 {[%clk 0:04:10.9][%timestamp 28]} 12... Be6
-{[%clk 0:04:15.2][%timestamp 41]} 13. Bg5 {[%clk 0:04:05.3][%timestamp 56]}
-13... Qd7 {[%clk 0:04:09][%timestamp 62]} 14. Bxe6 {[%clk 0:04:00.2][%timestamp
-51]} 14... Qxe6 {[%clk 0:04:05][%timestamp 40]} 15. Nf3 {[%clk
-0:03:59.5][%timestamp 7]} 15... Nd4 {[%clk 0:03:59.6][%timestamp 54]} 16. Nxd4
-{[%clk 0:03:56.9][%timestamp 26]} 16... exd4 {[%clk 0:03:58.4][%timestamp 12]}
-17. f4 {[%clk 0:03:49.2][%timestamp 77]} 17... Bg7 {[%clk 0:03:55.2][%timestamp
-32]} 18. f5 {[%clk 0:03:48.3][%timestamp 9]} 18... Qd7 {[%clk
-0:03:50][%timestamp 52]} 19. f6 {[%clk 0:03:46][%timestamp 23]} 19... Bf8 {[%clk
-0:03:42.8][%timestamp 72]} 20. e5 {[%clk 0:03:38.9][%timestamp 71]} 20... dxe5
-{[%clk 0:03:36.4][%timestamp 64]} 21. Qxe5+ {[%clk 0:03:38.7][%timestamp 2]}
-21... Be7 {[%clk 0:03:33.1][%timestamp 33]} 22. fxe7 {[%clk
-0:03:37.1][%timestamp 16]} 22... f6 {[%clk 0:03:20.8][%timestamp 123]} 23. Qxf6
-{[%clk 0:03:34.8][%timestamp 23]} 23... Rg8 {[%clk 0:03:12.8][%timestamp 80]}
-24. Qxg6+ {[%clk 0:03:31][%timestamp 38]} 24... Rxg6 {[%clk
-0:03:11.3][%timestamp 15]} 25. h4 {[%clk 0:03:24.7][%timestamp 63]} 25... h6
-{[%clk 0:03:05.7][%timestamp 56]} 26. g3 {[%clk 0:03:24.1][%timestamp 6]} 26...
-hxg5 {[%clk 0:03:03.7][%timestamp 20]} 27. hxg5 {[%clk 0:03:23.1][%timestamp
-10]} 27... Qxe7 {[%clk 0:02:58.4][%timestamp 53]} 28. Rh8+ {[%clk
-0:03:22.3][%timestamp 8]} 28... Qf8+ {[%clk 0:02:54.5][%timestamp 39]} 29. Rxf8+
-{[%clk 0:03:20.9][%timestamp 14]} 29... Kxf8 {[%clk 0:02:53.7][%timestamp 8]}
-30. b4 {[%clk 0:03:17.4][%timestamp 35]} 30... Re8 {[%clk 0:02:51][%timestamp
-27]} 31. a3 {[%clk 0:03:16.8][%timestamp 6]} 31... Rxg5 {[%clk
-0:02:49.1][%timestamp 19]} 32. Kf2 {[%clk 0:03:16.1][%timestamp 7]} 32... b5
-{[%clk 0:02:43.4][%timestamp 57]} 33. Kf3 {[%clk 0:03:15.3][%timestamp 8]} 33...
-Rf5+ {[%clk 0:02:40.7][%timestamp 27]} 34. Kg4 {[%clk 0:03:13.9][%timestamp 14]}
-34... Rf1 {[%clk 0:02:36.5][%timestamp 42]} 35. Kh4 {[%clk 0:03:12.6][%timestamp
-13]} 35... Ra1 {[%clk 0:02:34.9][%timestamp 16]} 36. g4 {[%clk
-0:03:12][%timestamp 6]} 36... Rxa3 {[%clk 0:02:31.6][%timestamp 33]} 37. Kh5
-{[%clk 0:03:10.4][%timestamp 16]} 37... Rxd3 {[%clk 0:02:30.4][%timestamp 12]}
-38. g5 {[%clk 0:03:09.9][%timestamp 5]} 38... Rg3 {[%clk 0:02:27.2][%timestamp
-32]} 39. Kh6 {[%clk 0:03:09][%timestamp 9]} 39... Kg8 {[%clk
-0:02:23.6][%timestamp 36]} 40. g6 {[%clk 0:03:08.2][%timestamp 8]} 40... Re7
-{[%clk 0:02:20.1][%timestamp 35]} 41. g7 {[%clk 0:03:06][%timestamp 22]} 41...
-Rexg7 {[%clk 0:02:18.5][%timestamp 16]} 42. Kh5 {[%clk 0:03:03.5][%timestamp
-25]} 42... R3g5+ {[%clk 0:02:16.4][%timestamp 21]} 43. Kh4 {[%clk
-0:03:01.3][%timestamp 22]} 43... Rh7+ {[%clk 0:02:10.7][%timestamp 57]} 44. Kxg5
-{[%clk 0:03:00.2][%timestamp 11]} 44... Rh1 {[%clk 0:02:07][%timestamp 37]} 45.
-Kf5 {[%clk 0:02:58.5][%timestamp 17]} 45... d3 {[%clk 0:02:06.1][%timestamp 9]}
-46. Ke4 {[%clk 0:02:57.7][%timestamp 8]} 46... d2 {[%clk 0:02:05.1][%timestamp
-10]} 47. Kd5 {[%clk 0:02:55.6][%timestamp 21]} 47... d1=Q+ {[%clk
-0:02:03.7][%timestamp 14]} 48. Kc6 {[%clk 0:02:54.9][%timestamp 7]} 48... Qc1+
-{[%clk 0:02:02.1][%timestamp 16]} 49. Kxb5 {[%clk 0:02:54][%timestamp 9]} 49...
-Rh5+ {[%clk 0:01:59.5][%timestamp 26]} 50. Ka4 {[%clk 0:02:50.2][%timestamp 38]}
-50... c5 {[%clk 0:01:48.6][%timestamp 109]} 51. b5 {[%clk 0:02:44.9][%timestamp
-53]} 51... c4 {[%clk 0:01:44.1][%timestamp 45]} 52. Ka5 {[%clk
-0:02:44][%timestamp 9]} 52... Qa1+ {[%clk 0:01:39.8][%timestamp 43]} 53. Kb4
-{[%clk 0:02:41.2][%timestamp 28]} 53... a5+ {[%clk 0:01:28.7][%timestamp 111]}
-54. Kxc4 {[%clk 0:02:37.7][%timestamp 35]} 54... a4 {[%clk 0:01:27.8][%timestamp
-9]} 55. Kb4 {[%clk 0:02:35.6][%timestamp 21]} 55... Rh4+ {[%clk
-0:01:22.7][%timestamp 51]} 56. Ka5 {[%clk 0:02:33.3][%timestamp 23]} 56... a3
-{[%clk 0:01:21.2][%timestamp 15]} 57. b6 {[%clk 0:02:32][%timestamp 13]} 57...
-a2 {[%clk 0:01:17.9][%timestamp 33]} 58. b7 {[%clk 0:02:31.5][%timestamp 5]}
-58... Qb1 {[%clk 0:01:16.7][%timestamp 12]} 59. Ka6 {[%clk 0:02:29.4][%timestamp
-21]} 59... Rh7 {[%clk 0:01:12][%timestamp 47]} 60. Ka7 {[%clk
-0:02:27.9][%timestamp 15]} 60... a1=Q+ {[%clk 0:01:09.7][%timestamp 23]} 61. Kb8
-{[%clk 0:02:26.1][%timestamp 18]} 61... Rxb7+ {[%clk 0:01:06.5][%timestamp 32]}
-62. Kc8 {[%clk 0:02:23.6][%timestamp 25]} 62... Qa8# {[%clk
-0:00:59.7][%timestamp 68]} 0-1"""
+1. e4 {[%clk 0:04:59.5][%timestamp 5]} 1... e5 {[%clk 0:04:58.5][%timestamp 15]}
+2. Nf3 {[%clk 0:04:59.4][%timestamp 1]} 2... Nc6 {[%clk 0:04:56.8][%timestamp
+17]} 3. Bc4 {[%clk 0:04:58.9][%timestamp 5]} 3... Nf6 {[%clk
+0:04:51.1][%timestamp 57]} 4. d3 {[%clk 0:04:56.3][%timestamp 26]} 4... a6
+{[%clk 0:04:47][%timestamp 41]} 5. a3 {[%clk 0:04:54.6][%timestamp 17]} 5... Bc5
+{[%clk 0:04:43.4][%timestamp 36]} 6. O-O {[%clk 0:04:50.1][%timestamp 45]} 6...
+O-O {[%clk 0:04:42.2][%timestamp 12]} 7. c3 {[%clk 0:04:49.4][%timestamp 7]}
+7... d6 {[%clk 0:04:34.7][%timestamp 75]} 8. b4 {[%clk 0:04:47.8][%timestamp
+16]} 8... Bb6 {[%clk 0:04:27.6][%timestamp 71]} 9. Nbd2 {[%clk
+0:04:42][%timestamp 58]} 9... Qe7 {[%clk 0:04:22.5][%timestamp 51]} 10. Bb2
+{[%clk 0:04:19.6][%timestamp 224]} 10... a5 {[%clk 0:04:14][%timestamp 85]} 11.
+b5 {[%clk 0:04:15][%timestamp 46]} 11... Nd8 {[%clk 0:04:03.1][%timestamp 109]}
+12. a4 {[%clk 0:03:58][%timestamp 170]} 12... Be6 {[%clk 0:03:59.7][%timestamp
+34]} 13. Ba3 {[%clk 0:03:28.4][%timestamp 296]} 13... Bxc4 {[%clk
+0:03:52.1][%timestamp 76]} 14. dxc4 {[%clk 0:03:14.6][%timestamp 138]} 14... Bc5
+{[%clk 0:03:44.7][%timestamp 74]} 15. Bb2 {[%clk 0:03:02.2][%timestamp 124]}
+15... c6 {[%clk 0:03:30.5][%timestamp 142]} 16. bxc6 {[%clk
+0:02:50.7][%timestamp 115]} 16... bxc6 {[%clk 0:03:17][%timestamp 135]} 17. Nb3
+{[%clk 0:02:38.1][%timestamp 126]} 17... Nb7 {[%clk 0:02:53.9][%timestamp 231]}
+18. Nxc5 {[%clk 0:02:22.6][%timestamp 155]} 18... Nxc5 {[%clk
+0:02:51.9][%timestamp 20]} 19. Ba3 {[%clk 0:02:14.4][%timestamp 82]} 19... Ncxe4
+{[%clk 0:02:45.2][%timestamp 67]} 20. Qe1 {[%clk 0:01:47.3][%timestamp 271]}
+20... c5 {[%clk 0:02:31.9][%timestamp 133]} 21. Bb2 {[%clk 0:01:36.7][%timestamp
+106]} 21... Rab8 {[%clk 0:02:19.8][%timestamp 121]} 22. Ba3 {[%clk
+0:01:19.9][%timestamp 168]} 22... Rb3 {[%clk 0:02:05.8][%timestamp 140]} 23. Bc1
+{[%clk 0:00:34.1][%timestamp 458]} 23... Rxc3 {[%clk 0:02:00.6][%timestamp 52]}
+24. Bb2 {[%clk 0:00:22.4][%timestamp 117]} 24... Rxc4 {[%clk
+0:01:49.9][%timestamp 107]} 25. Ba3 {[%clk 0:00:08.5][%timestamp 139]} 25... Rc3
+{[%clk 0:01:39.6][%timestamp 103]} 26. Qe2 {[%clk 0:00:00.3][%timestamp 82]}
+26... Rb3 {[%clk 0:01:32.5][%timestamp 71]} 0-1"""
 
 # Note: Update stockfish_path to your Stockfish installation
 results = analyze_game_performance(pgn_string, stockfish_path=r"C:\stockfish-windows-x86-64-avx2\stockfish\stockfish-windows-x86-64-avx2.exe")
